@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.bilisimegitim.rehberweb.entity;
 
 import java.io.Serializable;
@@ -26,10 +22,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "giris")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Giris.findAll", query = "SELECT g FROM Giris g")
-    , @NamedQuery(name = "Giris.findByNo", query = "SELECT g FROM Giris g WHERE g.no = :no")
-    , @NamedQuery(name = "Giris.findByKullanici", query = "SELECT g FROM Giris g WHERE g.kullanici = :kullanici")
-    , @NamedQuery(name = "Giris.findBySifre", query = "SELECT g FROM Giris g WHERE g.sifre = :sifre")})
+    @NamedQuery(name = "Giris.girisKontrol", query = "SELECT g FROM Giris g where g.kullanici = :kullanici")
+  ,@NamedQuery(name = "Giris.findAll", query = "SELECT g FROM Giris g")
+        ,@NamedQuery(name = "Giris.findByNo", query = "SELECT g FROM Giris g WHERE g.no = :no")
+    ,@NamedQuery(name = "Giris.findByKullanici", query = "SELECT g FROM Giris g WHERE g.kullanici = :kullanici")
+    ,@NamedQuery(name = "Giris.findBySifre", query = "SELECT g FROM Giris g WHERE g.sifre = :sifre")})
 public class Giris implements Serializable {
 
     private static final long serialVersionUID = 1L;
